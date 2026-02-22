@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Afah Clothiers | Premium Modest Ready-to-Wear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#010052",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="size-10 bg-primary text-white flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-2xl">diamond</span>
+</div>
+<h1 class="text-primary dark:text-slate-100 text-xl font-bold tracking-tight uppercase">Afah Clothiers</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-slate-100 text-sm font-semibold hover:opacity-70 transition-opacity" href="#">Abayas</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Kaftans</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Suits</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Gowns</a>
+</nav>
+<!-- Search & Actions -->
+<div class="flex flex-1 items-center justify-end gap-4">
+<div class="hidden lg:flex relative w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="Search collection..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors relative">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">shopping_bag</span>
+<span class="absolute top-1 right-1 size-4 bg-primary text-[10px] text-white flex items-center justify-center rounded-full">2</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">person</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs & Header -->
+<nav class="flex items-center gap-2 text-xs font-medium text-slate-500 uppercase tracking-widest mb-6">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary dark:text-slate-300">The Modest Collection</span>
+</nav>
+<section class="mb-12">
+<h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-slate-100 mb-4 tracking-tight">The Modest Collection</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed">
+                Discover elegance and craftsmanship in our curated selection of premium modest attire. Every piece is designed for the modern woman who values sophistication and quality.
+            </p>
+</section>
+<!-- Main Content Area -->
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 shrink-0">
+<div class="sticky top-28 space-y-8">
+<!-- Category -->
+<div>
+<h3 class="text-sm font-bold text-primary dark:text-slate-200 uppercase tracking-wider mb-4">Category</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 group-hover:text-primary transition-colors">All Clothing</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Abayas</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Kaftans</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 group-hover:text-primary transition-colors">Modest Suits</span>
+</label>
+</div>
+</div>
+<!-- Size -->
+<div>
+<h3 class="text-sm font-bold text-primary dark:text-slate-200 uppercase tracking-wider mb-4">Size</h3>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 text-xs font-bold border border-slate-200 hover:border-primary hover:text-primary rounded-lg transition-all">XS</button>
+<button class="py-2 text-xs font-bold border border-primary bg-primary text-white rounded-lg transition-all">S</button>
+<button class="py-2 text-xs font-bold border border-slate-200 hover:border-primary hover:text-primary rounded-lg transition-all">M</button>
+<button class="py-2 text-xs font-bold border border-slate-200 hover:border-primary hover:text-primary rounded-lg transition-all">L</button>
+<button class="py-2 text-xs font-bold border border-slate-200 hover:border-primary hover:text-primary rounded-lg transition-all">XL</button>
+<button class="py-2 text-xs font-bold border border-slate-200 hover:border-primary hover:text-primary rounded-lg transition-all">XXL</button>
+</div>
+</div>
+<!-- Colors -->
+<div>
+<h3 class="text-sm font-bold text-primary dark:text-slate-200 uppercase tracking-wider mb-4">Color Palette</h3>
+<div class="flex flex-wrap gap-3">
+<button class="size-6 rounded-full bg-slate-900 border border-slate-200 ring-2 ring-offset-2 ring-primary" title="Midnight Black"></button>
+<button class="size-6 rounded-full bg-[#010052] border border-slate-200" title="Deep Navy"></button>
+<button class="size-6 rounded-full bg-[#f5f5dc] border border-slate-200" title="Cream"></button>
+<button class="size-6 rounded-full bg-[#4a3728] border border-slate-200" title="Mocha"></button>
+<button class="size-6 rounded-full bg-[#2d5a27] border border-slate-200" title="Forest Green"></button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<!-- Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<p class="text-slate-500 text-sm font-medium">Showing <span class="text-primary font-bold">12</span> results</p>
+<div class="flex items-center gap-3">
+<span class="text-sm text-slate-500">Sort by:</span>
+<select class="border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-semibold focus:ring-primary py-2 px-4">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Best Sellers</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in elegant dark navy silk abaya standing in modern architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9IspmDYWI96KBJfzNCs_j56k1R7MpBvj1JLDAcnxI4bC_jv20g8uRUmBioA2vPxcv_Zw5IXe3D9jI3Q7Q6sLolyPUFMjOML6C4hgfjj3oNHui4lHAxT9vaUOj4NiPJeQYqJl0CIyEA7tayPoedf6401KD9WQ_fa7kmdx-hgZ2Cx7C4--xbJO3FxOemW0cKwOiYA0G0njX4h_TGnKwUtIzYzt3iYtOxQKEE8Vo114m3fZN1jI5TIWxe-RB16BQA5uRU7kbYNslrDDl"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform">Quick View</button>
+</div>
+<span class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 uppercase rounded">New Arrival</span>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Midnight Silk Abaya</h3>
+<p class="text-slate-500 text-sm mb-2">Premium Silk • Relaxed Fit</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$249.00</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in tailored modest suit beige with matching hijab in professional office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBskPZY2HxYWPg-c0wwkIH1ZApN9XcQipXYwn6NJtFZKv1blmxZxjQYPOHF-CEp6X4NiaRkRxXIcVqq6KA9WkY5tLFzqUMxYUBj_goyLhWvJrgZqK5COW-HqW50sbYKlnXnIcV2dVCNCAIXH9MTcnrLu2vz0XBl4V-ptWdsPiMgJeocTLsgC3ZLMwNZIjomJPiqZrxeQtoxbpB2AzknObWyGnonJOMdqZOVAK_cGx6xZc7BFygfsi_QiiO-1BoAR9bPFKKgYJADE2kg"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform">Add to Cart</button>
+</div>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Corporate Modest Suit</h3>
+<p class="text-slate-500 text-sm mb-2">Wool Blend • Tailored Fit</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$385.00</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman wearing flowy forest green kaftan with intricate embroidery details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGdxP5mZ0Jb-Awdda0tymCx-Qdmn8wJhBMQiOVamIJVE6aSysNnWtBg-rhOxHCNVPqn2kPEvRuRn9fRi4PwFTBtJK5xrtaiWy3rEjrY1JsMbvy9CxE8-v8Pw4UBF2IUhWNBbYJgxA1DDIP9lPUiwj_X1SCAkC1hmeR7bkNiX4uL47djW7Cz94u_1InBF2zE-f6CHDEvYqwJcUeSDKLQ_05ct17uVP2Oxtgs9pawE5VKwxLAxoc7zoj3Y1yLTJPPEXtYxZ_P9W3_b8F"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform">Add to Cart</button>
+</div>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Embroidered Forest Kaftan</h3>
+<p class="text-slate-500 text-sm mb-2">Linen Cotton • Intricate Detail</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$195.00</p>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in elegant long-sleeved evening gown champagne color modest fit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA54qCuXsvTmDiwqsk64Kdi72eo5Hs2SeHuz45wb7iQWBWW6IccmAc56hlNTgaOWyx8k07RsdqkfnonOEANrFPs42kUdJ6_IYFaMFxeAothxOTFCfxQ4GEiNuMavSStbCCqNQSLJO9sG703wEMWvB58ej00Cm9Mv0PG121oPk-Vy9EdNG2bUz498QkbUrL98dNx0nelQM_5fxuI8zxhQzqaGbiRAnKye7-0BtIA9O0GTp2cQW4vJiWbmchHyv8bSLvZpDQGhc88S0pM"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-primary px-4 py-2 rounded-lg font-bold text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform">Add to Cart</button>
+</div>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Champagne Evening Gown</h3>
+<p class="text-slate-500 text-sm mb-2">Satin Finish • Full Coverage</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$420.00</p>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in minimalist grey abaya with textured fabric detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ryi1E07aX3jYZdcj7RjBnPXGq_qeujUTETD0zP8AU0EZiBjwIlB_ESUIvPHdM60-wzBlx9SgE34gVhpHhE0iADVmGi2gQRHNQIxjd8fdEQU-qedgpggksBQExyehYvov5C6G4O8MH7X6djKdVockwSBnJPYrfZ1cLGBcKWRNVYBfEZV_bBrL7GZj4WTziKCskEkmWtYqF0MpPLgRcFtdPZET0M7Hv7bKh6XsJS0-MViZYBhGemOdR5P90pRTaz_VCPnW41XjPkBW"/>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Cloud Grey Textured Abaya</h3>
+<p class="text-slate-500 text-sm mb-2">Breathable Crepe • Minimalist</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$215.00</p>
+</div>
+<!-- Product Card 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 mb-4">
+<img class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110" data-alt="Woman in rich mocha colored tailored modest suit with loose trousers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUcxB7dLt-x9TmcVMRD6_nWcZZfwECoq2GDYQFhjX9rE2jILt7A3kAY84Def3phbrzk2iKt63JL9bK53EJQC8-CZImCdwnZfPLLwW-ILL_BSJ3J8nSIA5gHbfG7dVcGkAQn3z8yadKdGYS7koACRgZ7MTZWM7YoKOF1IY92CLUs3miXI1qf1taW8lrxdMDzevwtypkK9iJ3SHjOSAoXVMQhWzECvIpKLk5ieHF4-CLc68itkn38GDueObj-ANe__9XqGVaDRtey4s0"/>
+</div>
+<h3 class="text-primary dark:text-slate-100 font-bold text-lg mb-1 group-hover:underline decoration-2">Mocha Executive Set</h3>
+<p class="text-slate-500 text-sm mb-2">Summer Wool • Wide Leg</p>
+<p class="text-primary dark:text-slate-200 font-extrabold">$350.00</p>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-20 flex flex-col items-center gap-6">
+<button class="bg-primary text-white px-12 py-4 rounded-lg font-bold tracking-widest hover:opacity-90 transition-all shadow-lg hover:shadow-primary/20">
+                        LOAD MORE PIECES
+                    </button>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg border border-primary bg-primary text-white font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 hover:border-primary transition-colors font-bold">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 hover:border-primary transition-colors font-bold">3</button>
+<span class="px-2">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 hover:border-primary transition-colors font-bold text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 mt-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary text-white flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-lg">diamond</span>
+</div>
+<h2 class="text-primary dark:text-white font-bold tracking-tight uppercase">Afah Clothiers</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                        Redefining modest elegance with premium fabrics and timeless tailoring. Join our community of modern modest women.
+                    </p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-primary dark:text-white font-bold text-sm uppercase mb-6 tracking-widest">Collections</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Abayas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kaftans</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Modest Suits</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Evening Gowns</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary dark:text-white font-bold text-sm uppercase mb-6 tracking-widest">Support</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sizing Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tailoring Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary dark:text-white font-bold text-sm uppercase mb-6 tracking-widest">Newsletter</h4>
+<p class="text-slate-500 text-sm mb-4">Be the first to know about new collections.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm px-4" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 Afah Clothiers Ready-to-Wear. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 text-xs hover:underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-slate-400 text-xs hover:underline underline-offset-4" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

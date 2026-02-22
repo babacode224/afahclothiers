@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Afah Clothiers - Modest High Fashion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#010052",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-accent-gold">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-primary dark:text-white text-xl font-extrabold tracking-tight">Afah Clothiers</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-accent-gold transition-colors" href="#">Abayas</a>
+<a class="text-sm font-semibold hover:text-accent-gold transition-colors" href="#">Hijabs</a>
+<a class="text-sm font-semibold hover:text-accent-gold transition-colors border-b-2 border-accent-gold" href="#">Gallery</a>
+<a class="text-sm font-semibold hover:text-accent-gold transition-colors" href="#">Collections</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/5 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-white">search</span>
+</button>
+<button class="hidden lg:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        Book Appointment
+                    </button>
+<div class="size-10 rounded-full bg-accent-gold/20 flex items-center justify-center border border-accent-gold/30 overflow-hidden">
+<span class="material-symbols-outlined text-accent-gold text-xl">person</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Hero Intro -->
+<div class="text-center mb-16 space-y-4">
+<span class="text-accent-gold font-bold tracking-[0.2em] uppercase text-xs">Editorial Showcase</span>
+<h2 class="text-4xl md:text-6xl font-black text-primary dark:text-white leading-tight">The Art of Modesty</h2>
+<p class="max-w-2xl mx-auto text-slate-600 dark:text-slate-400 text-lg">
+                Discover our curated gallery featuring luxury silhouettes, intricate hand-beaded embroidery, and the finest silks from our latest high-fashion collections.
+            </p>
+</div>
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+<button class="px-6 py-2 rounded-full bg-primary text-white text-sm font-bold">All Visions</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-primary dark:text-white text-sm font-medium border border-primary/10 hover:border-accent-gold transition-colors">Silk Abayas</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-primary dark:text-white text-sm font-medium border border-primary/10 hover:border-accent-gold transition-colors">Embroidery Details</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-primary dark:text-white text-sm font-medium border border-primary/10 hover:border-accent-gold transition-colors">Premium Hijabs</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-primary dark:text-white text-sm font-medium border border-primary/10 hover:border-accent-gold transition-colors">Evening Wraps</button>
+</div>
+<!-- Masonry Gallery Grid -->
+<div class="masonry-grid">
+<!-- Item 1: Editorial Shot -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Model wearing a flowing royal blue velvet abaya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDjfS5fwvoxAYu4MYy_pZ2H-PEf1mvADOO0eBiTNg3135J4SQOpFgeAeuXZfJTjXfzburBtBF3PSGvzmaMQwZKOQZ2kzAHLaZ-dqPnI76p71vpOBvxNc3M2RqWgBfy7zQCzbMKhxl1F0AgmzNubxpFF3JlJTCM6-4VFx4TNL3GXNv_IH4_CXHvx6_7S-gritGW6LIBgBPzRZO_D1oYqgtW3YYMOQIAwtMurkgsgYPK9OiiyFh-hYUBoH94daf5UetAPcsmCQ9WBErn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Look 01</p>
+<h3 class="text-white text-xl font-bold">Midnight Velvet Ensemble</h3>
+</div>
+</div>
+<!-- Item 2: Detail Shot -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Macro detail of gold embroidery on silk fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCivhDUlm132gsxAvUSgKmw92jPANpG6XWhLce6J5FKHz8beisaaFMut8AzxxKejIO-rCP3hcCf5NxJem20C_At1OkDzADGw2w0roj9mBQ3YqF8ugt1oQyOqgBjIurxhx9z7oneqEzxi9CWXDzRdoDV9-WvPjXGDzo9rttv9uhsClqO3c1MamUO9g3bFEC3MDjIs5KfnbH1M1qPqTcith3nY28cskEnrN2DyzMng0c1Bp06TLs5A5TMsufbMD2TwyFu1ESEMayIHFm8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Craftsmanship</p>
+<h3 class="text-white text-xl font-bold">Hand-Stitched Gold Filigree</h3>
+</div>
+</div>
+<!-- Item 3: Hijab Draping -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of elegantly draped emerald green silk hijab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nwmyxsfr63XM_TkkGuEMaZvSPllzqaLTdC6tAC1JTh2CZ7e-FR7SiloNYdVj4zwoNjFgT13O4z_mCdSXIzHVY59jE4wmY2JmI6edBqrH1I2Tv586WCvf9yURf9RAyRg_AzbViFVnhFbp0GbshoE0PEWtyP-GhxY1EN-Bb7SXylabf36a7lUXs6vLHDqjUTRMc0I_oFIPmUFM998c0PXAsmEjDbvWHn7X9ddHMSOvz6oto0bERujhQwOY2iE9pIxYk4uhDrUQGJsO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Styling</p>
+<h3 class="text-white text-xl font-bold">The Signature Drape</h3>
+</div>
+</div>
+<!-- Item 4: Evening Gown -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Model in a full modest evening gown with cape detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWK6BMZLq272wUxbVUgER2H2wlMLeDN5dUY-BPZUUpnxtZb7_t-TmV2icChDwx6usGszgVKP8XR-j9EvK5qEB1kbhjKc3VzZ-uzsz_dv-sI_JjtEGEWqxXO813qQMafcoT3kG2l9vCZ_e8LcYxHzb8X3c8WFgAc4uLY-vyowBiiPI73M7lJ0_j88FQITYaa2T2TATOGZ667pGObZFWezW0JbqPyQWaLqSXT3s14TN7ARwy3UxRimebzpKkJRh1gOurlJikKY_3h3-n"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Evening Wear</p>
+<h3 class="text-white text-xl font-bold">Imperial Cape Silhouette</h3>
+</div>
+</div>
+<!-- Item 5: Textile Shot -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Array of luxury silk fabrics in jewel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDILr1ITvTSpXiCspCCwCLQw2KI4YYXZFp6n_hHbeVdg4_tQBsN57f0ox20vxJFnYvhlmOLTiEGXQrX2livDddFYopOeDQRx3LRRwdgz5KxAGG4prgFn7aMEDI6OKMpH0DuSaJ4u2SSrKsYttZyUzTsVCNnOx6uzOEJIvNvzEcKDuo65gF-oQFoNgWqb8nnlMvkY-nWbv2Lu_s19PLkbhCWHX8FQT2vWCbN4LbAMGhweRPejne5MUNizdBK9SRH9_9kd6ENEfoROJCY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Materials</p>
+<h3 class="text-white text-xl font-bold">Pure Mulberry Silk Tones</h3>
+</div>
+</div>
+<!-- Item 6: Modern Abaya -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist sand-colored modest linen coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBub2f_XoiuOoIu-oetpLVfe_tcX6vS8sMrM-RIoXS9PKqRt_ElxVI51MNYyJvaoKOxzIpmYGfkqj7PKo0KwL2lPTo-KRDeEiv6KLQT4uSCOcHj-2agua3Dm6mvybrT24FFCWXRmJod45VYS-ix2F_0Eq6L1sEYz9IQmX2Y9HHRfpTUOD-yUKszsDNdqBncvU9Bv58gLvUsxvscfkyAjGXH30MLPRVRQFmNIjz2fiG-rUdR3omIMqYvfjFRiFKXQdMM5HALyVyYKZ9a"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Resort '24</p>
+<h3 class="text-white text-xl font-bold">Architectural Linen Wrap</h3>
+</div>
+</div>
+<!-- Item 7: Beaded Detail -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Detailed shot of pearl and crystal hand beading on a sleeve" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv65IGTVSm-srxYs-tBcUNEAn_qEl-_LoQNlVK5Rc7Y9QFH1u34Tnqvt2DwZ6FWkzsXIn2ZEg45iHZctAblQU8h_YkhtLmRpcVAgm86EW1j6UyScj4MY8Qe69WV9kHAwvkQWjilbHYaaGhUR2HruGsXWvfNWIuiyNFTbX1uYS9pxxY_J4D2cnNM3sdpIwSmP5EhfjhBYQ3nMIh_BXdoWkW3pEkKr2W78UJ_i9RO3cnfGlxPYlLyix533krJwK6_lOY9IqNeXcR_t61"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Detail</p>
+<h3 class="text-white text-xl font-bold">Crystalline Cuff Finishes</h3>
+</div>
+</div>
+<!-- Item 8: The Full Look -->
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img class="w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Model posing in desert landscape wearing luxury modest bridal wear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5b_KN7yEF6WNYo5E4zf5Hke74ae1WZrCLuFSRsmqjiDy8iWNlk7HqgxV61sWZ3-UESV7WCOP0Um5nqLaAPkHS_8QF7IMg7JDuDjjxLxeLQBf1KgDapJRg1gcL2upgLkMu1zOf-Ut3Q2A77mRNF3V6T1j2VJluHcznRCK3DlZXVucg2iFHn6e3SGWYvLVawyx7JyCj8Nw3hnX6Day6ntgnaPJJEFqK2Fe8bEX3B-aSgj0bJGflppnGDAQ-UhqBq-ygM6iZdDPfRtgC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1">Couture</p>
+<h3 class="text-white text-xl font-bold">The Oasis Bride Collection</h3>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-16 text-center">
+<button class="px-10 py-4 bg-white dark:bg-slate-800 border-2 border-primary text-primary dark:text-white dark:border-accent-gold font-bold rounded-lg hover:bg-primary hover:text-white dark:hover:bg-accent-gold transition-all duration-300">
+                Load More Masterpieces
+            </button>
+</div>
+</main>
+<!-- Appointment CTA Footer -->
+<section class="bg-primary dark:bg-slate-900 py-16 mt-12 overflow-hidden relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<h3 class="text-white text-3xl md:text-5xl font-black mb-6">Experience the Craftsmanship</h3>
+<p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">
+                Visit our private boutique for a personalized styling session and explore our full collection of bespoke modest wear.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-8 py-4 bg-accent-gold text-primary font-bold rounded-lg hover:bg-white transition-colors">
+                    Schedule Private Fitting
+                </button>
+<button class="px-8 py-4 border border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
+                    Request Fabric Samples
+                </button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-24 -right-24 size-64 rounded-full bg-accent-gold/10 blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 size-64 rounded-full bg-accent-gold/10 blur-3xl"></div>
+</section>
+<footer class="bg-white dark:bg-background-dark border-t border-primary/5 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary/40 dark:text-accent-gold/40">
+<svg class="size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-slate-500 text-sm font-medium">© 2024 Afah Clothiers. All rights reserved.</span>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Pinterest</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Vogue Runway</a>
+</div>
+</div>
+</footer>
+</body></html>
