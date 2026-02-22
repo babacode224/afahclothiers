@@ -90,29 +90,29 @@ export default function Home() {
               />
             </div>
             {/* Gradient overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-primary/95 md:from-primary/90 via-primary/80 md:via-primary/60 to-transparent" />
           </div>
         ))}
-        <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-start">
-          <div className="max-w-2xl space-y-6">
-            <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm block">
+        <div className="relative z-20 h-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col justify-center items-start">
+          <div className="max-w-2xl space-y-4 md:space-y-6">
+            <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs md:text-sm block">
               Established 2024
             </span>
-            <h1 className="text-white text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
               The Art of <br />
               <span className="italic font-black">Modesty</span>
             </h1>
-            <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed max-w-lg">
+            <p className="text-slate-200 text-base md:text-xl font-light leading-relaxed max-w-lg">
               Timeless elegance redefined. Fusing modern architectural silhouettes with centuries of traditional heritage.
             </p>
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
               <Link href="/collections">
-                <Button className="bg-primary hover:bg-primary/90 text-white px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg transition-all flex items-center gap-2 group cursor-pointer">
+                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
                   Explore Collection →
                 </Button>
               </Link>
               <Button
-                className="border border-white/30 hover:border-white text-white px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg backdrop-blur-sm transition-all cursor-pointer"
+                className="w-full sm:w-auto border border-white/30 hover:border-white text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-lg backdrop-blur-sm transition-all cursor-pointer"
                 variant="outline"
               >
                 Book Atelier
@@ -126,23 +126,23 @@ export default function Home() {
       </section>
 
       {/* Featured Collections */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 md:mb-12 gap-4">
             <div>
-              <h2 className="text-4xl font-bold text-primary mb-2">Featured Collections</h2>
-              <p className="text-slate-600 text-sm">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">Featured Collections</h2>
+              <p className="text-slate-600 text-sm md:text-base">
                 Our curated selection of premium modest wear, handpicked for contemporary African women
               </p>
             </div>
             <Link href="/collections">
-              <div className="text-accent font-bold uppercase tracking-widest text-sm hover:text-primary transition-colors cursor-pointer">
+              <div className="text-accent font-bold uppercase tracking-widest text-xs md:text-sm hover:text-primary transition-colors cursor-pointer">
                 View All Collections →
               </div>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {featuredCollections.map((collection) => (
               <div key={collection.id} className="group cursor-pointer">
                 <div className="relative overflow-hidden rounded-lg mb-4 h-80 bg-slate-100">
@@ -165,18 +165,18 @@ export default function Home() {
       </section>
 
       {/* Bespoke Section with Image */}
-      <section className="py-20 px-6 bg-primary text-white">
+      <section className="py-16 md:py-20 px-4 md:px-6 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm block mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs md:text-sm block mb-4">
                 Exclusively Crafted
               </span>
-              <h2 className="text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
                 Afah Bespoke:<br />
                 <span className="text-accent">Crafted For You</span>
               </h2>
-              <p className="text-slate-200 text-lg leading-relaxed mb-8">
+              <p className="text-slate-200 text-base md:text-lg leading-relaxed mb-8">
                 For the discerning woman seeking exclusivity. Our bespoke collection works with you to create a couture piece that's uniquely yours. From initial consultation to final fitting, we ensure every stitch reflects your vision and heritage.
               </p>
               <div className="space-y-4 mb-8">
@@ -214,11 +214,11 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="relative h-96 rounded-lg overflow-hidden">
+            <div className="relative h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden order-1 lg:order-2">
               <img
                 src={allProductImages[4]}
                 alt="Bespoke Couture"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
@@ -226,32 +226,32 @@ export default function Home() {
       </section>
 
       {/* Heritage Section - Gallery of All Products */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-12">
-            <h2 className="text-4xl font-bold text-primary mb-4">Heritage in Every Stitch</h2>
+          <div className="mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Heritage in Every Stitch</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
               At Afah Clothiers, we honor the legacy of modest fashion while embracing contemporary design. Every piece tells a story of craftsmanship, cultural pride, and timeless elegance.
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">100%</div>
-              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">Hand Crafted</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
+            <div className="text-center bg-slate-50 p-6 rounded-lg sm:bg-transparent sm:p-0 sm:rounded-none">
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100%</div>
+              <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-600">Hand Crafted</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">24hr</div>
-              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">Consultation</p>
+            <div className="text-center bg-slate-50 p-6 rounded-lg sm:bg-transparent sm:p-0 sm:rounded-none">
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24hr</div>
+              <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-600">Consultation</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">∞</div>
-              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">Timeless Design</p>
+            <div className="text-center bg-slate-50 p-6 rounded-lg sm:bg-transparent sm:p-0 sm:rounded-none">
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">∞</div>
+              <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-600">Timeless Design</p>
             </div>
           </div>
 
           {/* Display all 13 product images in masonry grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {allProductImages.slice(5, 13).map((img, idx) => (
               <div key={idx} className="relative h-64 rounded-lg overflow-hidden group">
                 <img 
@@ -265,7 +265,7 @@ export default function Home() {
           </div>
 
           {/* Additional row for remaining images */}
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {allProductImages.slice(0, 3).map((img, idx) => (
               <div key={`extra-${idx}`} className="relative h-64 rounded-lg overflow-hidden group">
                 <img 
@@ -281,9 +281,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section with Product Images */}
-      <section className="py-20 px-6 bg-slate-50">
+      <section className="py-16 md:py-20 px-4 md:px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Customer Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 md:mb-12 text-center">Customer Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -332,10 +332,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-primary text-white text-center">
+      <section className="py-16 md:py-20 px-4 md:px-6 bg-primary text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6">The Afah Circle</h2>
-          <p className="text-slate-200 text-lg mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">The Afah Circle</h2>
+          <p className="text-slate-200 text-base md:text-lg mb-8">
             Join our community of modern modest women who celebrate elegance, culture, and authenticity.
           </p>
           <Link href="/contact">

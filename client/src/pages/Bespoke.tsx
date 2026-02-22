@@ -7,12 +7,12 @@ export default function Bespoke() {
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative w-full px-6 md:px-20 py-12 lg:py-24 max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-8 order-2 lg:order-1">
+        <section className="relative w-full px-4 md:px-20 py-8 lg:py-24 max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="flex flex-col gap-6 md:gap-8 order-2 lg:order-1">
               <div className="space-y-4">
-                <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm">Exclusively Crafted</span>
-                <h1 className="text-4xl md:text-6xl font-black text-primary leading-[1.1] tracking-tight">
+                <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Exclusively Crafted</span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-primary leading-tight md:leading-[1.1] tracking-tight">
                   Artistry in <br />Every Stitch
                 </h1>
                 <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
@@ -49,13 +49,13 @@ export default function Bespoke() {
         </section>
 
         {/* Process Section */}
-        <section className="bg-white dark:bg-slate-900/50 py-24 px-6 md:px-20">
+        <section className="bg-white dark:bg-slate-900/50 py-16 md:py-24 px-4 md:px-20">
           <div className="max-w-[1440px] mx-auto">
-            <div className="text-center mb-20 space-y-4">
+            <div className="text-center mb-12 md:mb-20 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-primary">The Bespoke Experience</h2>
-              <p className="text-slate-500 max-w-2xl mx-auto">From the first sketch to the final hand-finish, our process is a journey of collaboration and precision.</p>
+              <p className="text-slate-500 max-w-2xl mx-auto px-2">From the first sketch to the final hand-finish, our process is a journey of collaboration and precision.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative">
               <div className="flex flex-col gap-6 relative group">
                 <div className="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                   <Lightbulb className="w-8 h-8" />
@@ -97,9 +97,9 @@ export default function Bespoke() {
         </section>
 
         {/* Atelier Showcase */}
-        <section className="py-24 px-6 md:px-20 max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-2 space-y-6">
+        <section className="py-16 md:py-24 px-4 md:px-20 max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="lg:col-span-2 space-y-6">
               <div
                 className="aspect-video rounded-2xl bg-cover bg-center"
                 style={{ backgroundImage: "url('/a9.jpeg')" }}
@@ -115,13 +115,13 @@ export default function Bespoke() {
                 ></div>
               </div>
             </div>
-            <div className="bg-primary rounded-2xl p-10 flex flex-col justify-center text-white">
-              <Award className="w-12 h-12 mb-6" />
-              <h2 className="text-3xl font-bold mb-6">Inside the Atelier</h2>
-              <p className="text-white/80 leading-relaxed mb-8">
+            <div className="bg-primary rounded-2xl p-6 md:p-10 flex flex-col justify-center text-white">
+              <Award className="w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6" />
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Inside the Atelier</h2>
+              <p className="text-white/80 leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                 Our atelier is a sanctuary for modesty and craftsmanship. Every piece is an original, designed specifically for the woman who wears it. We celebrate the intersection of heritage techniques and contemporary modest silhouettes.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 text-sm md:text-base">
                 <div className="flex items-center gap-4 border-b border-white/20 pb-4">
                   <span className="font-bold text-2xl">01</span>
                   <span className="font-medium">Hand-applied beadwork</span>
@@ -131,8 +131,8 @@ export default function Bespoke() {
                   <span className="font-medium">Heritage silk lining</span>
                 </div>
                 <div className="flex items-center gap-4 pb-4">
-                  <span class="font-bold text-2xl">03</span>
-                  <span class="font-medium">Female-led craftsmanship</span>
+                  <span className="font-bold text-2xl">03</span>
+                  <span className="font-medium">Female-led craftsmanship</span>
                 </div>
               </div>
             </div>
@@ -140,13 +140,13 @@ export default function Bespoke() {
         </section>
 
         {/* Inquiry Form Section */}
-        <section className="bg-primary/5 py-24 px-6 md:px-20">
-          <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-16 shadow-xl border border-slate-100">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-primary mb-4">Commission Your Couture</h2>
-              <p className="text-slate-500">Share your vision with us. Our design team will contact you within 48 hours to schedule your initial consultation.</p>
+        <section className="bg-primary/5 py-16 md:py-24 px-4 md:px-20">
+          <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-16 shadow-xl border border-slate-100">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2 md:mb-4">Commission Your Couture</h2>
+              <p className="text-slate-500 text-sm md:text-base px-2">Share your vision with us. Our design team will contact you within 48 hours to schedule your initial consultation.</p>
             </div>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <form className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-2">
                 <label className="text-sm font-bold text-primary">Full Name</label>
                 <input className="w-full h-12 rounded-lg border-slate-300 bg-background-light px-4 focus:ring-primary focus:border-primary" type="text" />
@@ -169,12 +169,12 @@ export default function Bespoke() {
                   <option>Other</option>
                 </select>
               </div>
-              <div className="md:col-span-2 space-y-2">
+              <div className="sm:col-span-2 space-y-2">
                 <label className="text-sm font-bold text-primary">Fabric & Design Preferences</label>
                 <textarea className="w-full rounded-lg border-slate-300 bg-background-light px-4 py-3 focus:ring-primary focus:border-primary" placeholder="Describe your dream garment..." rows={4}></textarea>
               </div>
-              <div className="md:col-span-2">
-                <Button className="w-full h-14 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest rounded-lg shadow-xl shadow-primary/20 hover:scale-[1.01] transition-all" type="submit">
+              <div className="sm:col-span-2 mt-2">
+                <Button className="w-full h-14 bg-primary hover:bg-primary/90 text-white text-xs md:text-sm font-bold uppercase tracking-widest rounded-lg shadow-xl shadow-primary/20 hover:scale-[1.01] transition-all" type="submit">
                   Submit Inquiry
                 </Button>
               </div>
