@@ -24,13 +24,10 @@ export default function Gallery() {
     { id: 13, image: "/a13.jpeg", category: "premium", title: "Premium Collection" },
     { id: 14, image: "/pic11.jpeg", category: "abayas", title: "Desert Rose Abaya" },
     { id: 15, image: "/pic12.jpeg", category: "evening", title: "Sapphire Evening Wear" },
-    { id: 16, image: "/pic14.jpeg", category: "kaftans", title: "Golden Thread Kaftan" },
-    { id: 17, image: "/pic15.jpeg", category: "gowns", title: "Ruby Modest Gown" },
     { id: 18, image: "/pic16.jpeg", category: "suits", title: "Onyx Tailored Suit" },
     { id: 19, image: "/pic17.jpeg", category: "accessories", title: "Pearl Chiffon Hijab" },
     { id: 20, image: "/pic18.jpeg", category: "abayas", title: "Olive Draped Abaya" },
     { id: 21, image: "/pic19.jpeg", category: "evening", title: "Amethyst Evening Dress" },
-    { id: 22, image: "/pic20.jpeg", category: "kaftans", title: "Ocean Breeze Kaftan" },
     { id: 23, image: "/pic21.jpeg", category: "gowns", title: "Emerald Lace Gown" },
     { id: 24, image: "/pic22.jpeg", category: "premium", title: "Signature Platinum Look" },
   ];

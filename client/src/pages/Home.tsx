@@ -60,13 +60,6 @@ export default function Home() {
       description: "Rich Velvet • Hand-beaded",
       image: "/pic12.jpeg",
       price: "$450.00",
-    },
-    {
-      id: 6,
-      name: "Golden Thread Kaftan",
-      description: "Silk Blend • Luxury Embroidery",
-      image: "/pic14.jpeg",
-      price: "$275.00",
     }
   ];
 
@@ -86,13 +79,10 @@ export default function Home() {
     "/a13.jpeg",
     "/pic11.jpeg",
     "/pic12.jpeg",
-    "/pic14.jpeg",
-    "/pic15.jpeg",
     "/pic16.jpeg",
     "/pic17.jpeg",
     "/pic18.jpeg",
     "/pic19.jpeg",
-    "/pic20.jpeg",
     "/pic21.jpeg",
     "/pic22.jpeg",
   ];
