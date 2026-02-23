@@ -13,8 +13,8 @@ export default function Home() {
   const heroSlides = [
     "/a9.jpeg",
     "/a10.jpeg",
-    "/a11.jpeg",
-    "/a12.jpeg",
+    "/pic16.jpeg",
+    "/pic21.jpeg",
     "/a13.jpeg",
   ];
 
@@ -47,6 +47,27 @@ export default function Home() {
       image: "/a3.jpeg",
       price: "$195.00",
     },
+    {
+      id: 4,
+      name: "Desert Rose Abaya",
+      description: "Soft Crepe • Flowing Drape",
+      image: "/pic11.jpeg",
+      price: "$230.00",
+    },
+    {
+      id: 5,
+      name: "Sapphire Evening Wear",
+      description: "Rich Velvet • Hand-beaded",
+      image: "/pic12.jpeg",
+      price: "$450.00",
+    },
+    {
+      id: 6,
+      name: "Golden Thread Kaftan",
+      description: "Silk Blend • Luxury Embroidery",
+      image: "/pic14.jpeg",
+      price: "$275.00",
+    }
   ];
 
   const allProductImages = [
@@ -63,6 +84,17 @@ export default function Home() {
     "/a11.jpeg",
     "/a12.jpeg",
     "/a13.jpeg",
+    "/pic11.jpeg",
+    "/pic12.jpeg",
+    "/pic14.jpeg",
+    "/pic15.jpeg",
+    "/pic16.jpeg",
+    "/pic17.jpeg",
+    "/pic18.jpeg",
+    "/pic19.jpeg",
+    "/pic20.jpeg",
+    "/pic21.jpeg",
+    "/pic22.jpeg",
   ];
 
   return (
@@ -250,13 +282,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Display all 13 product images in masonry grid */}
+          {/* Display a rich selection of product images in masonry grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {allProductImages.slice(5, 13).map((img, idx) => (
+            {allProductImages.slice(3, 15).map((img, idx) => (
               <div key={idx} className="relative h-64 rounded-lg overflow-hidden group">
                 <img 
                   src={img} 
-                  alt={`Product ${idx + 6}`} 
+                  alt={`Product ${idx + 4}`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
@@ -266,11 +298,11 @@ export default function Home() {
 
           {/* Additional row for remaining images */}
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {allProductImages.slice(0, 3).map((img, idx) => (
+            {allProductImages.slice(15, 24).map((img, idx) => (
               <div key={`extra-${idx}`} className="relative h-64 rounded-lg overflow-hidden group">
                 <img 
                   src={img} 
-                  alt={`Product ${idx + 1}`} 
+                  alt={`Product ${idx + 16}`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
