@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+
+// Dynamically import all images from the Pictures folder
+const localPicturesRaw = import.meta.glob("../../../Pictures/*.{jpeg,jpg,png,webp,avif}", { eager: true });
+const localPictures = Object.values(localPicturesRaw).map((mod: any) => mod.default as string);
 
 /**
  * Gallery Page - Stitch Design
- * Masonry layout with all 13 product images and filter buttons
+ * Masonry layout featuring all product images and filter buttons
  */
 export default function Gallery() {
   const [selectedFilter, setSelectedFilter] = useState("all");
+  const [loaded, setLoaded] = useState(false);
 
-  const galleryItems = [
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  const baseGalleryItems = [
     { id: 1, image: "/a1.jpeg", category: "abayas", title: "Midnight Silk Abaya" },
     { id: 2, image: "/a2.jpeg", category: "evening", title: "Evening Couture" },
     { id: 3, image: "/a3.jpeg", category: "kaftans", title: "Embroidered Kaftan" },
@@ -31,6 +40,25 @@ export default function Gallery() {
     { id: 23, image: "/pic21.jpeg", category: "gowns", title: "Emerald Lace Gown" },
     { id: 24, image: "/pic22.jpeg", category: "premium", title: "Signature Platinum Look" },
   ];
+
+  // Merge the base gallery items with newly discovered pictures from the folder.
+  // We use the file name to avoid adding duplicates.
+  const baseImageNames = baseGalleryItems.map(item => item.image.split("/").pop());
+  const newPictures = localPictures.filter(pic => {
+    const picName = pic.split("/").pop();
+    return picName && !baseImageNames.includes(picName);
+  });
+
+  const categories = ["abayas", "evening", "gowns", "suits", "premium", "kaftans"];
+  
+  const additionalItems = newPictures.map((pic, idx) => ({
+    id: 100 + idx,
+    image: pic,
+    category: categories[idx % categories.length],
+    title: `Afah Exclusive Vol. ${idx + 1}`
+  }));
+
+  const galleryItems = [...baseGalleryItems, ...additionalItems];
 
   const filters = ["All Visions", "Abayas", "Evening Wear", "Kaftans", "Gowns", "Suits", "Accessories"];
 
@@ -95,28 +123,40 @@ export default function Gallery() {
       </section>
 
       {/* Gallery Grid - Masonry Layout */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+      <section className="py-16 px-6 bg-[#f8f9fa]">
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .gallery-item {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+          }
+        `}} />
+
+        <div className="max-w-[1400px] mx-auto">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6">
             {filteredItems.map((item, idx) => (
               <div
                 key={item.id}
-                className={`group relative overflow-hidden rounded-lg cursor-pointer ${
-                  idx === 1 || idx === 4 ? "lg:col-span-2 lg:row-span-2" : ""
-                }`}
+                className="gallery-item group relative overflow-hidden rounded-xl cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 bg-white"
+                style={{ animationDelay: `${(idx % 12) * 0.1}s` }}
               >
-                <div className={`relative overflow-hidden bg-slate-100 ${idx === 1 || idx === 4 ? "h-96" : "h-64"}`}>
+                <div className="relative overflow-hidden bg-slate-100">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700 ease-out"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                  <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-black/80 backdrop-blur-sm px-4 py-3 rounded-lg w-full">
-                      <h3 className="text-white font-bold text-sm">{item.title}</h3>
-                      <p className="text-white/80 text-xs capitalize">{item.category}</p>
-                    </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 pointer-events-none">
+                    <p className="text-white/80 text-xs font-bold uppercase tracking-[0.2em] mb-2">{item.category}</p>
+                    <h3 className="text-white font-serif text-lg leading-tight">{item.title}</h3>
                   </div>
                 </div>
               </div>
@@ -124,8 +164,8 @@ export default function Gallery() {
           </div>
 
           {filteredItems.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-slate-600 text-lg">No items found in this category.</p>
+            <div className="text-center py-20 bg-white rounded-xl border border-dashed border-slate-300">
+              <p className="text-slate-500 font-serif text-xl">No extraordinary pieces found in this category.</p>
             </div>
           )}
         </div>

@@ -1,29 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+
+// Dynamically import all images from the Pictures folder
+const localPicturesRaw = import.meta.glob("../../../Pictures/*.{jpeg,jpg,png,webp,avif}", { eager: true });
+const localPictures = Object.values(localPicturesRaw).map((mod: any) => mod.default as string);
 
 /**
  * Home Page - Stitch Design
  * Hero section with featured collections, bespoke section, and heritage showcase
- * All 13 product images displayed strategically throughout
+ * All product images displayed strategically throughout
  */
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // We'll distribute the local pictures into 3 rows for the horizontal masonry effect
+  const rows: string[][] = [[], [], []];
+  localPictures.forEach((pic, index) => {
+    rows[index % 3].push(pic);
+  });
 
-  const heroSlides = [
-    "/a9.jpeg",
-    "/a10.jpeg",
-    "/pic16.jpeg",
-    "/pic21.jpeg",
-    "/a13.jpeg",
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   const featuredCollections = [
     {
@@ -89,52 +83,29 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      {/* Hero Section with Featured Image */}
-      <section className="relative h-[90vh] w-full overflow-hidden bg-primary">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={slide}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            {/* Blurred background to fill empty space aesthetically */}
-            <div
-              className="absolute inset-0 bg-cover bg-center blur-2xl opacity-40 scale-110"
-              style={{ backgroundImage: `url('${slide}')` }}
-            />
-            {/* Main image fully visible */}
-            <div className="absolute inset-0 w-full h-full flex justify-end">
-              <img
-                src={slide}
-                alt="Modest fashion piece"
-                className="w-full lg:w-3/4 h-full object-contain object-right"
-              />
-            </div>
-            {/* Gradient overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-primary/95 md:from-primary/90 via-primary/80 md:via-primary/60 to-transparent" />
-          </div>
-        ))}
-        <div className="relative z-20 h-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col justify-center items-start">
-          <div className="max-w-2xl space-y-4 md:space-y-6">
-            <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs md:text-sm block">
+      {/* Hero Section - 60/40 Split */}
+      <section className="relative h-[90vh] w-full overflow-hidden bg-black flex flex-col md:flex-row">
+        {/* Left Column - 60% */}
+        <div className="w-full md:w-[60%] h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10 relative">
+          <div className="max-w-xl space-y-6">
+            <span className="text-white font-bold tracking-[0.3em] uppercase text-xs md:text-sm block">
               Established 2024
             </span>
-            <h1 className="text-white text-5xl sm:text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-extrabold leading-[1.1] tracking-tight">
               The Art of <br />
               <span className="italic font-black">Modesty</span>
             </h1>
-            <p className="text-slate-200 text-base md:text-xl font-light leading-relaxed max-w-lg">
+            <p className="text-slate-300 text-base md:text-xl font-sans font-light leading-relaxed max-w-md">
               Timeless elegance redefined. Fusing modern architectural silhouettes with centuries of traditional heritage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto">
               <Link href="/collections">
-                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-lg transition-all flex items-center justify-center gap-2 group cursor-pointer">
-                  Explore Collection →
+                <Button className="w-full sm:w-auto bg-white hover:bg-slate-200 text-black px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group cursor-pointer shadow-lg">
+                  Explore Collection <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Button>
               </Link>
               <Button
-                className="w-full sm:w-auto border border-white/30 hover:border-white text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-lg backdrop-blur-sm transition-all cursor-pointer"
+                className="w-full sm:w-auto border-2 border-white/50 hover:border-white hover:bg-white/10 text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer"
                 variant="outline"
               >
                 Book Atelier
@@ -142,8 +113,65 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white text-2xl">
-          ↓
+
+        {/* Right Column - 40% (Masonry Infinity Scroll) */}
+        <div className="w-full md:w-[40%] h-full relative overflow-hidden bg-black flex flex-col justify-evenly py-4 hidden sm:flex border-l border-white/10">
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-transparent opacity-80" />
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes slideLeft {
+              from { transform: translateX(0); }
+              to { transform: translateX(-50%); }
+            }
+            .infinite-scroll-row {
+              display: flex;
+              gap: 1rem;
+              width: max-content;
+              animation: slideLeft 40s linear infinite;
+            }
+            .infinite-scroll-row:hover {
+              animation-play-state: paused;
+            }
+            .scrolling-img-container {
+              flex: 0 0 auto;
+              height: 25vh;
+              border-radius: 0.5rem;
+              background-color: #111;
+              overflow: hidden;
+              border: 3px solid #fff;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+              transition: transform 0.3s ease;
+            }
+            .scrolling-img-container:hover {
+              transform: scale(1.05);
+              z-index: 20;
+            }
+            .scrolling-img {
+              height: 100%;
+              width: auto;
+              object-fit: cover;
+            }
+          `}} />
+
+          {/* Render 3 horizontal scrolling rows to mimic masonry */}
+          {rows.map((rowImages, rowIndex) => (
+            <div key={rowIndex} className="flex relative items-center" style={{ height: "25vh", transform: `translateX(${rowIndex * -10}%)` }}>
+              <div 
+                className="infinite-scroll-row"
+                style={{
+                  animationDuration: `${35 + rowIndex * 10}s`,
+                  animationDirection: rowIndex % 2 === 0 ? "normal" : "reverse" 
+                }}
+              >
+                {/* Duplicate the array to create seamless loop */}
+                {[...rowImages, ...rowImages, ...rowImages].map((img, idx) => (
+                  <div key={idx} className="scrolling-img-container">
+                    <img src={img} alt="Gallery Image" className="scrolling-img" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
