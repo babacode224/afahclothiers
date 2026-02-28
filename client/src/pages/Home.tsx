@@ -112,7 +112,7 @@ export default function Home() {
         </div>
 
         {/* Right Column - 40% (Masonry Diagonal Infinity Scroll) */}
-        <div className="w-full md:w-[40%] h-[50vh] md:h-full relative overflow-hidden bg-black flex border-t border-white/10 md:border-t-0 md:border-l">
+        <div className="w-full md:w-[40%] h-[50vh] md:h-full relative overflow-hidden bg-black flex border-t border-white/10 md:border-t-0 md:border-l group">
           {/* Gradient Overlays for smooth blending edges */}
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-30" />
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black via-transparent to-black opacity-30" />
@@ -137,8 +137,12 @@ export default function Home() {
               display: flex;
               flex-direction: column;
               gap: 0;
-              animation: slideDiagonalY 30s linear infinite;
+              animation: slideDiagonalY 40s linear infinite;
               will-change: transform;
+            }
+            .group:hover .scrolling-wrapper-x,
+            .group:hover .scrolling-wrapper-y {
+              animation-play-state: paused;
             }
           `}} />
 
