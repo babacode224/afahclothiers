@@ -12,10 +12,11 @@ const localPictures = Object.values(localPicturesRaw).map((mod: any) => mod.defa
  * All product images displayed strategically throughout
  */
 export default function Home() {
-  // We'll distribute the local pictures into 3 rows for the horizontal masonry effect
-  const rows: string[][] = [[], [], []];
+  // Distribute all local pictures into 6 columns for the vertical/horizontal grid
+  const numCols = 6;
+  const cols: string[][] = Array.from({length: numCols}, () => []);
   localPictures.forEach((pic, index) => {
-    rows[index % 3].push(pic);
+    cols[index % numCols].push(pic);
   });
 
 
@@ -86,104 +87,84 @@ export default function Home() {
       {/* Hero Section - 60/40 Split */}
       <section className="relative min-h-[100svh] md:h-[90vh] w-full overflow-hidden bg-black flex flex-col md:flex-row pb-8 md:pb-0">
         {/* Left Column - 60% */}
-        <div className="w-full md:w-[60%] flex-1 md:h-full flex flex-col justify-center px-6 py-12 md:py-0 pt-20 md:px-16 lg:px-24 z-10 relative">
-          <div className="max-w-xl space-y-6">
-            <span className="text-white font-bold tracking-[0.3em] uppercase text-xs md:text-sm block">
-              Established 2024
-            </span>
+        <div className="w-full md:w-[60%] flex-1 md:h-full flex flex-col justify-center items-center px-6 py-12 md:py-0 pt-20 md:px-16 lg:px-24 z-10 relative bg-black">
+          <div className="max-w-xl space-y-6 flex flex-col items-center text-center">
             <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-extrabold leading-[1.1] tracking-tight">
-              The Art of <br />
-              <span className="italic font-black">Modesty</span>
+              The Art of Modesty
             </h1>
-            <p className="text-slate-300 text-base md:text-xl font-sans font-light leading-relaxed max-w-md">
+            <p className="text-white text-base md:text-xl font-sans font-light leading-relaxed max-w-md">
               Timeless elegance redefined. Fusing modern architectural silhouettes with centuries of traditional heritage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto justify-center">
               <Link href="/collections">
-                <Button className="w-full sm:w-auto bg-white hover:bg-slate-200 text-black px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group cursor-pointer shadow-lg">
-                  Explore Collection <span className="group-hover:translate-x-1 transition-transform">→</span>
+                <Button className="w-full sm:w-auto bg-white hover:bg-slate-200 text-black px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                  EXPLORE COLLECTION →
                 </Button>
               </Link>
               <Button
-                className="w-full sm:w-auto border-2 border-white/50 hover:border-white hover:bg-white/10 text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full backdrop-blur-sm transition-all duration-300 cursor-pointer"
+                className="w-full sm:w-auto border-2 border-white/50 hover:border-white hover:bg-white/10 text-white px-8 md:px-10 py-6 md:py-4 text-xs md:text-sm font-bold uppercase tracking-widest rounded-full backdrop-blur-sm transition-all duration-300"
                 variant="outline"
               >
-                Book Atelier
+                BOOK ATELIER
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Right Column - 40% (Masonry Infinity Scroll) */}
-        <div className="w-full md:w-[40%] h-[50vh] md:h-full relative overflow-hidden bg-black flex flex-col justify-evenly py-2 md:py-4 border-t border-white/10 md:border-t-0 md:border-l">
-          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-transparent opacity-80" />
+        {/* Right Column - 40% (Masonry Diagonal Infinity Scroll) */}
+        <div className="w-full md:w-[40%] h-[50vh] md:h-full relative overflow-hidden bg-black flex border-t border-white/10 md:border-t-0 md:border-l">
+          {/* Gradient Overlays for smooth blending edges */}
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-30" />
+          <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-black via-transparent to-black opacity-30" />
           
           <style dangerouslySetInnerHTML={{__html: `
-            @keyframes slideLeft {
+            @keyframes slideDiagonalX {
               from { transform: translateX(0); }
               to { transform: translateX(-50%); }
             }
-            .infinite-scroll-row {
+            @keyframes slideDiagonalY {
+              from { transform: translateY(-50%); }
+              to { transform: translateY(0); }
+            }
+            .scrolling-wrapper-x {
               display: flex;
-              gap: 0.5rem;
               width: max-content;
-              animation: slideLeft 40s linear infinite;
+              gap: 0;
+              animation: slideDiagonalX 40s linear infinite;
+              will-change: transform;
             }
-            @media (min-width: 768px) {
-              .infinite-scroll-row {
-                gap: 1rem;
-              }
-            }
-            .infinite-scroll-row:hover {
-              animation-play-state: paused;
-            }
-            .scrolling-img-container {
-              flex: 0 0 auto;
-              height: 14vh;
-              border-radius: 0.5rem;
-              background-color: #111;
-              overflow: hidden;
-              border: 2px solid #fff;
-              box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-              transition: transform 0.3s ease;
-            }
-            @media (min-width: 768px) {
-              .scrolling-img-container {
-                height: 25vh;
-                border: 3px solid #fff;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-              }
-            }
-            .scrolling-img-container:hover {
-              transform: scale(1.05);
-              z-index: 20;
-            }
-            .scrolling-img {
-              height: 100%;
-              width: auto;
-              object-fit: cover;
+            .scrolling-wrapper-y {
+              display: flex;
+              flex-direction: column;
+              gap: 0;
+              animation: slideDiagonalY 30s linear infinite;
+              will-change: transform;
             }
           `}} />
 
-          {/* Render 3 horizontal scrolling rows to mimic masonry */}
-          {rows.map((rowImages, rowIndex) => (
-            <div key={rowIndex} className="flex relative items-center h-[15vh] md:h-[25vh]" style={{ transform: `translateX(${rowIndex * -10}%)` }}>
-              <div 
-                className="infinite-scroll-row"
-                style={{
-                  animationDuration: `${35 + rowIndex * 10}s`,
-                  animationDirection: rowIndex % 2 === 0 ? "normal" : "reverse" 
-                }}
-              >
-                {/* Duplicate the array to create seamless loop */}
-                {[...rowImages, ...rowImages, ...rowImages].map((img, idx) => (
-                  <div key={idx} className="scrolling-img-container">
-                    <img src={img} alt="Gallery Image" className="scrolling-img" loading="lazy" />
+          {/* X-axis Wrapper */}
+          <div className="scrolling-wrapper-x items-start">
+            {/* Duplicate the array of columns to scroll horizontally seamlessly */}
+            {[0, 1].map((xSet) => (
+              <div key={`xSet-${xSet}`} className="flex flex-row gap-4 pr-4">
+                {cols.map((colImages, colIndex) => (
+                  /* Y-axis Wrapper per column */
+                  <div key={`col-${colIndex}`} className="scrolling-wrapper-y w-32 md:w-48 lg:w-56">
+                    {/* Duplicate the array of images to scroll vertically seamlessly */}
+                    {[0, 1].map((ySet) => (
+                      <div key={`ySet-${ySet}`} className="flex flex-col gap-4 pb-4">
+                        {colImages.map((img, imgIdx) => (
+                          <div key={`img-${imgIdx}`} className="w-full bg-slate-900 rounded-lg overflow-hidden border-4 border-white shadow-xl shadow-black hover:scale-105 transition-transform duration-300">
+                            <img src={img} alt="Gallery Image" className="w-full h-auto object-cover block" loading="lazy" decoding="async" />
+                          </div>
+                        ))}
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
