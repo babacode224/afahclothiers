@@ -84,9 +84,9 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section - 60/40 Split */}
-      <section className="relative h-[90vh] w-full overflow-hidden bg-black flex flex-col md:flex-row">
+      <section className="relative min-h-[100svh] md:h-[90vh] w-full overflow-hidden bg-black flex flex-col md:flex-row pb-8 md:pb-0">
         {/* Left Column - 60% */}
-        <div className="w-full md:w-[60%] h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10 relative">
+        <div className="w-full md:w-[60%] flex-1 md:h-full flex flex-col justify-center px-6 py-12 md:py-0 pt-20 md:px-16 lg:px-24 z-10 relative">
           <div className="max-w-xl space-y-6">
             <span className="text-white font-bold tracking-[0.3em] uppercase text-xs md:text-sm block">
               Established 2024
@@ -115,7 +115,7 @@ export default function Home() {
         </div>
 
         {/* Right Column - 40% (Masonry Infinity Scroll) */}
-        <div className="w-full md:w-[40%] h-full relative overflow-hidden bg-black flex flex-col justify-evenly py-4 hidden sm:flex border-l border-white/10">
+        <div className="w-full md:w-[40%] h-[50vh] md:h-full relative overflow-hidden bg-black flex flex-col justify-evenly py-2 md:py-4 border-t border-white/10 md:border-t-0 md:border-l">
           <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-transparent opacity-80" />
           
           <style dangerouslySetInnerHTML={{__html: `
@@ -125,22 +125,34 @@ export default function Home() {
             }
             .infinite-scroll-row {
               display: flex;
-              gap: 1rem;
+              gap: 0.5rem;
               width: max-content;
               animation: slideLeft 40s linear infinite;
+            }
+            @media (min-width: 768px) {
+              .infinite-scroll-row {
+                gap: 1rem;
+              }
             }
             .infinite-scroll-row:hover {
               animation-play-state: paused;
             }
             .scrolling-img-container {
               flex: 0 0 auto;
-              height: 25vh;
+              height: 14vh;
               border-radius: 0.5rem;
               background-color: #111;
               overflow: hidden;
-              border: 3px solid #fff;
-              box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+              border: 2px solid #fff;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.5);
               transition: transform 0.3s ease;
+            }
+            @media (min-width: 768px) {
+              .scrolling-img-container {
+                height: 25vh;
+                border: 3px solid #fff;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+              }
             }
             .scrolling-img-container:hover {
               transform: scale(1.05);
@@ -155,7 +167,7 @@ export default function Home() {
 
           {/* Render 3 horizontal scrolling rows to mimic masonry */}
           {rows.map((rowImages, rowIndex) => (
-            <div key={rowIndex} className="flex relative items-center" style={{ height: "25vh", transform: `translateX(${rowIndex * -10}%)` }}>
+            <div key={rowIndex} className="flex relative items-center h-[15vh] md:h-[25vh]" style={{ transform: `translateX(${rowIndex * -10}%)` }}>
               <div 
                 className="infinite-scroll-row"
                 style={{
@@ -199,6 +211,8 @@ export default function Home() {
                   <img
                     src={collection.image}
                     alt={collection.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

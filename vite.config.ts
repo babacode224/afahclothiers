@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 // =============================================================================
@@ -150,7 +151,13 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), ViteImageOptimizer({
+  png: { quality: 80 },
+  jpeg: { quality: 80 },
+  jpg: { quality: 80 },
+  webp: { lossless: true },
+  avif: { lossless: true },
+})];
 
 export default defineConfig({
   plugins,
